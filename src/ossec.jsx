@@ -33,7 +33,7 @@ const SOCIALS = {
   linkedin: "https://www.linkedin.com/company/ossec-ensi/",
 };
 
-export default function TuniHackForm() {
+export default function ossec() {
   const [formData, setFormData] = useState({
     teamName: "",
     competition: "",
@@ -542,79 +542,44 @@ const handleSubmit = async () => {
 
   </div>
 </div>
+<footer className="w-full bg-slate-900/70 backdrop-blur-md border-t border-blue-800 py-8">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+            <div>
+              <h3 className="text-cyan-400 font-semibold text-lg mb-3">OSSEC</h3>
+              <p className="text-blue-300 text-sm leading-relaxed">
+                Open Source Software ENSI Club - Le club dédié à l'innovation technologique et au partage des connaissances.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-cyan-400 font-semibold text-lg mb-3">Contact</h3>
+              <a href="mailto:ossec@ensi-uma.tn" className="flex items-center gap-2 text-blue-300 hover:text-cyan-400 transition-colors text-sm">
+                <Mail className="w-4 h-4" /> ossec@ensi-uma.tn
+              </a>
+            </div>
+            <div>
+              <h3 className="text-cyan-400 font-semibold text-lg mb-3">Suivez-nous</h3>
+              <div className="flex flex-wrap gap-3">
+                <a href={SOCIALS.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-blue-800 hover:border-cyan-400 hover:bg-slate-700/50 text-blue-300 hover:text-cyan-400 transition-all text-sm">
+                  <Linkedin className="w-4 h-4" /> LinkedIn
+                </a>
+                <a href={SOCIALS.facebook} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-blue-800 hover:border-cyan-400 hover:bg-slate-700/50 text-blue-300 hover:text-cyan-400 transition-all text-sm">
+                  <Facebook className="w-4 h-4" /> Facebook
+                </a>
+                <a href={SOCIALS.instagram} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-blue-800 hover:border-cyan-400 hover:bg-slate-700/50 text-blue-300 hover:text-cyan-400 transition-all text-sm">
+                  <Instagram className="w-4 h-4" /> Instagram
+                </a>
+              </div>
+            </div>
+          </div>
 
-
-<footer id="contact" className="mt-12 bg-slate-900/70 backdrop-blur-md border-t border-blue-800 py-8 w-full">
-  <div className="w-full px-4">
-    
-    {/* Section Contact avec structure en grille */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
-      
-      {/* Colonne 1 - À propos */}
-      <div>
-        <h3 className="text-cyan-400 font-semibold text-lg mb-3">OSSEC</h3>
-        <p className="text-blue-300 text-sm leading-relaxed">
-          Open Source Software ENSI Club - Le club dédié à l'innovation technologique et au partage des connaissances.
-        </p>
-      </div>
-
-      {/* Colonne 2 - Contact */}
-      <div>
-        <h3 className="text-cyan-400 font-semibold text-lg mb-3">Contact</h3>
-        <a 
-          href="mailto:ossec@ensi-uma.tn" 
-          className="flex items-center gap-2 text-blue-300 hover:text-cyan-400 transition-colors text-sm"
-        >
-          <Mail className="w-4 h-4" />
-          ossec@ensi-uma.tn
-        </a>
-      </div>
-
-      <div>
-        <h3 className="text-cyan-400 font-semibold text-lg mb-3">Suivez-nous</h3>
-        <div className="flex flex-wrap gap-3">
-          <a 
-            href={SOCIALS.linkedin} 
-            target="_blank" 
-            rel="noreferrer" 
-            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-blue-800 hover:border-cyan-400 hover:bg-slate-700/50 text-blue-300 hover:text-cyan-400 transition-all text-sm"
-          >
-            <Linkedin className="w-4 h-4" />
-            <span>LinkedIn</span>
-          </a>
-          <a 
-            href={SOCIALS.facebook} 
-            target="_blank" 
-            rel="noreferrer" 
-            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-blue-800 hover:border-cyan-400 hover:bg-slate-700/50 text-blue-300 hover:text-cyan-400 transition-all text-sm"
-          >
-            <Facebook className="w-4 h-4" />
-            <span>Facebook</span>
-          </a>
-          <a 
-            href={SOCIALS.instagram} 
-            target="_blank" 
-            rel="noreferrer" 
-            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-blue-800 hover:border-cyan-400 hover:bg-slate-700/50 text-blue-300 hover:text-cyan-400 transition-all text-sm"
-          >
-            <Instagram className="w-4 h-4" />
-            <span>Instagram</span>
-          </a>
-          
+          <div className="border-t border-blue-800/50 pt-6">
+            <p className="text-center text-blue-500 text-sm">
+              © 2026 OSSEC - Open Source Software ENSI Club. Tous droits réservés.
+            </p>
+          </div>
         </div>
-      </div>
-
-    </div>
-
-    {/* Séparateur */}
-    <div className="border-t border-blue-800/50 pt-6">
-      <p className="text-center text-blue-500 text-sm">
-        © 2026 OSSEC - Open Source Software ENSI Club. Tous droits réservés.
-      </p>
-    </div>
-
-  </div>
-</footer>
+      </footer>
       </div>
     </div>
     
