@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import TuniHackForm from './ossec'
+import Ossec from './ossec'
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
         className="absolute inset-0 bg-gradient-to-br from-cyan-900/30 via-blue-900/20 to-black backdrop-blur-md"
       />
 
-      {/* 🔥 GLOW ANIMÉ (BONUS 2) */}
+   
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -43,7 +43,7 @@ export default function App() {
         }}
         className="relative z-10 w-full"
       >
-        <TuniHackForm />
+        <Ossec />
       </motion.div>
     </div>
   )

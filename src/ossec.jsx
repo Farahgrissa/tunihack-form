@@ -52,12 +52,16 @@ const [showInstallPartyGallery, setShowInstallPartyGallery] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 useEffect(() => {
   setFormData((prev) => {
-    if (prev.competition === "pitchhack" && prev.memberCount > 3) {
-      return { ...prev, memberCount: 3 };
+    if (prev.competition === "tunihack") {
+      if (prev.memberCount < 3 || prev.memberCount > 4) {
+        return { ...prev, memberCount: 3 };
+      }
     }
 
-    if (prev.competition === "tunihack" && prev.memberCount > 4) {
-      return { ...prev, memberCount: 4 };
+    if (prev.competition === "pitchhack") {
+      if (prev.memberCount > 4) {
+        return { ...prev, memberCount: 4 };
+      }
     }
 
     return prev;
@@ -207,12 +211,12 @@ const handleSubmit = async () => {
       </h3>
 
       <p className="text-blue-300 mb-4">
-        Atelier d’installation Linux & outils open source
+        Installation de Kali Linux & intégration des membres
       </p>
 
       <div className="flex items-center justify-center gap-2 text-blue-200 mb-3">
         <Calendar className="w-5 h-5" />
-        <span>Octobre 2025</span>
+        <span>28 Septembre 2025</span>
       </div>
 
       <div className="flex items-center justify-center gap-2 text-blue-300 mb-6">
@@ -305,7 +309,7 @@ const handleSubmit = async () => {
 
           <div className="bg-slate-900/40 rounded-lg p-4 border border-blue-900 mb-8 text-center">
             <p className="text-blue-200">
-              📧 Chaque équipe doit envoyer les CV par email à{" "}
+               Chaque équipe doit envoyer les CV par email à{" "}
               <a href="mailto:ossec@ensi-uma.tn" className="text-cyan-400 hover:underline font-semibold">
                 ossec@ensi-uma.tn
               </a>
@@ -336,7 +340,7 @@ const handleSubmit = async () => {
                         className="mr-3 mt-1"
                       />
                       <div>
-                        <div className="text-white font-semibold">Pitch Hack</div>
+                        <div className="text-white font-semibold">PitchHack</div>
                         <div className="text-blue-400 text-sm">Présentez votre idée innovante</div>
                       </div>
                     </label>
@@ -362,20 +366,33 @@ const handleSubmit = async () => {
 
 
 <div>
-  <div className="mt-4 bg-slate-900/40 border border-blue-800 rounded-lg p-4 text-center">
-  <p className="text-cyan-400 font-semibold">
-     Frais d'inscription
+<div className="mt-4 bg-slate-900/40 border border-blue-800 rounded-lg p-4 text-center">
+
+  {/* Frais d'inscription - MIS EN VALEUR */}
+  <p className="text-cyan-400 font-bold text-2xl mb-3">
+    Frais d'inscription
   </p>
+
   <p className="text-blue-300 mt-1">
-    Pitch Hack : <span className="font-semibold text-white">20 DT</span>
+    PitchHack : <span className="font-semibold text-white">20 DT</span>
   </p>
   <p className="text-blue-300">
     TuniHack : <span className="font-semibold text-white">30 DT</span>
   </p>
-  <p className="text-blue-400 text-sm mt-2">
-    Paiement sur place le jour de l'événement
+
+  <p className="text-blue-300 text-sm mt-3">
+    Un seul membre de l’équipe est responsable du paiement à l’avance via D17 pour l’ensemble de l’équipe.
   </p>
+  <p className="text-cyan-400 font-semibold text-lg mt-2">
+    D17 : 26634066
+  </p>
+
+  <p className="text-red-600 text-sm font-bold mt-2">
+    Aucune inscription ne sera validée sans paiement avant le jour J du hackathon.
+  </p>
+
 </div>
+
 
   <label className="block text-blue-300 mb-2">
     Nombre de membres *
@@ -388,9 +405,9 @@ const handleSubmit = async () => {
   className={input}
 >
   {(formData.competition === "pitchhack"
-    ? [1, 2, 3]
-    : formData.competition === "tunihack"
     ? [1, 2, 3, 4]
+    : formData.competition === "tunihack"
+    ? [3, 4]
     : [1]
   ).map((n) => (
     <option key={n} value={n}>
@@ -398,6 +415,7 @@ const handleSubmit = async () => {
     </option>
   ))}
 </select>
+
 </div>
 
             {/* Team Members */}
@@ -406,12 +424,12 @@ const handleSubmit = async () => {
               <div key={index} className="bg-slate-900/40 rounded-lg p-6 border border-blue-900">
                 <h3 className="text-xl font-semibold text-cyan-400 mb-4">
                   {index === 0 ? "Premier membre" : index === 1 ? "Deuxième membre" : index === 2 ? "Troisième membre" : "Quatrième membre"}
-                  {index === 0 && <span className="text-red-400"> *</span>}
+                  { <span className="text-red-400"> *</span>}
                 </h3>
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-blue-300 mb-2">Nom complet {index === 0 && "*"}</label>
+                    <label className="block text-blue-300 mb-2">Nom complet<span className="text-red-400"> *</span></label>
                     <input
                       type="text"
                       value={formData.membres[index].fullName}
@@ -423,7 +441,7 @@ const handleSubmit = async () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-blue-300 mb-2">Numéro de téléphone {index === 0 && "*"}</label>
+                      <label className="block text-blue-300 mb-2">Numéro de téléphone <span className="text-red-400">*</span></label>
                       <input
                         type="tel"
                         value={formData.membres[index].phone}
@@ -434,7 +452,7 @@ const handleSubmit = async () => {
                     </div>
 
                     <div>
-                      <label className="block text-blue-300 mb-2">Email {index === 0 && "*"}</label>
+                      <label className="block text-blue-300 mb-2">Email <span className="text-red-400">*</span></label>
                       <input
                         type="email"
                         value={formData.membres[index].email}
@@ -531,14 +549,6 @@ const handleSubmit = async () => {
       Hoodie officiel de la <span className="font-semibold text-cyan-400">11ème édition de TuniHack</span>.
     </p>
 
-    <p className="text-xl text-white font-semibold mb-3">
-      Prix : <span className="text-cyan-400">40 DT</span>
-    </p>
-
-    {/* Texte ajouté */}
-    <p className="text-blue-300 text-sm">
-      Si vous souhaitez l’acheter, veuillez nous contacter via nos réseaux sociaux.
-    </p>
 
   </div>
 </div>
