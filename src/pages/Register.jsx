@@ -155,7 +155,9 @@ export default function Register() {
                         <CreditCard size={12} className="text-cyan-400" />
                         <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-widest">D17 Transfert</span>
                       </div>
-                      <p className="text-3xl font-mono font-black text-white tracking-[0.2em] mb-1">26 634 066</p>
+<p className="text-[7vw] md:text-4xl font-mono font-black text-white tracking-tight md:tracking-[0.2em] mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
+  26 634 066
+</p>
                       <p className="text-xs text-slate-400 font-medium">Destinataire : OSSEC Finance</p>
                     </div>
 
