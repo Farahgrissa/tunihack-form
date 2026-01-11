@@ -54,7 +54,7 @@ const SOCIALS = {
 const FAQ_DATA = [
 {
     question: "Quels sont les frais d'inscription ?",
-    answer: "L'inscription est fixée à 30 DT pour le TuniHack et 20 DT pour le PitchHack."
+    answer: "L'inscription est fixée à ( 30 DT * nbre de membres ) pour le TuniHack et ( 20 DT * nbre de membres ) pour le PitchHack."
   },
   {
     question: "Si je ne participe pas à la compétition, puis-je quand même rejoindre ?",
@@ -240,7 +240,7 @@ useEffect(() => {
         to="/register" 
         className="ml-4 px-5 py-2 rounded-full bg-cyan-600 hover:bg-cyan-500 text-white transition-all shadow-lg shadow-cyan-500/20 scale-90"
       >
-        S'inscrire
+       Participer
       </Link>
     </nav>
   </div>
@@ -386,9 +386,7 @@ useEffect(() => {
           <p className="text-[10px] font-black text-slate-600 tracking-[0.5em] uppercase">
             © 2026 OSSEC ENSI — Tous droits réservés
           </p>
-          <p className="text-lg md:text-xl text-slate-400 font-medium">
-            Conçu et réalisé par <span className="text-cyan-500 font-bold">Farah GRISSA</span> — <span className="italic">HR Manager</span>
-          </p>
+       
         </div>
       </footer>
 

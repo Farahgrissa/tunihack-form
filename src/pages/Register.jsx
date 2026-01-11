@@ -132,60 +132,78 @@ export default function Register() {
                 </div>
               </div>
 
-              {/* TICKET DE PAIEMENT DYNAMIQUE */}
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-[2rem] blur opacity-10 group-hover:opacity-25 transition duration-1000"></div>
-                <div className="relative bg-slate-950 border border-white/10 rounded-[2rem] p-8 overflow-hidden">
-                  <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="text-center md:text-left">
-                      <p className="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-black mb-2">Total Inscription</p>
-                      <div className="flex items-baseline gap-2 justify-center md:justify-start">
-                        <span className="text-6xl font-black text-white tracking-tighter">
-                          {formData.competition === "pitchhack" ? "20" : "30"}
-                        </span>
-                        <span className="text-2xl font-black text-cyan-500">DT</span>
-                      </div>
-                      <p className="text-slate-500 text-[10px] mt-2 font-bold uppercase tracking-widest italic">Paiement unique par équipe</p>
-                    </div>
-
-                    <div className="hidden md:block w-px h-20 bg-white/10"></div>
-
-                    <div className="text-center md:text-left flex-1">
-                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 mb-3">
-                        <CreditCard size={12} className="text-cyan-400" />
-                        <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-widest">D17 Transfert</span>
-                      </div>
-<p className="text-[6.5vw] xs:text-2xl md:text-4xl font-mono font-black text-white whitespace-nowrap tracking-tight md:tracking-[0.2em]">
-  26&nbsp;634&nbsp;066
-</p>                <p className="text-xs text-slate-400 font-medium">Destinataire : OSSEC Finance</p>
-                    </div>
-
-                  
-                  </div>
-{/* BLOC D'INSTRUCTION AGRANDI */}
-<div className="mt-8 pt-6 border-t border-white/10">
-  <div className="flex flex-col md:flex-row items-center justify-center gap-4 p-5 rounded-2xl bg-red-500/5 border border-red-500/20">
-    {/* Icône plus grande */}
-    <AlertCircle size={28} className="text-red-500 shrink-0" />
+            {/* TICKET DE PAIEMENT DYNAMIQUE : CALCUL PAR MEMBRE */}
+<div className="relative group">
+  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-[2rem] blur opacity-10 group-hover:opacity-25 transition duration-1000"></div>
+  <div className="relative bg-slate-950 border border-white/10 rounded-[2rem] p-8 overflow-hidden">
     
-    <div className="text-center md:text-left">
-      <p className="text-xs font-black text-red-500 uppercase tracking-[0.2em] mb-1">
-        Action Requise (Validation)
-      </p>
-      <p className="text-sm md:text-base text-slate-200 font-medium">
-        Envoyez la capture D17 + CVs à :{' '}
-        <a 
-          href="mailto:ossec@ensi-uma.tn" 
-          className="text-cyan-400 font-bold hover:text-cyan-300 transition-colors underline decoration-cyan-500/30 underline-offset-4"
-        >
-          ossec@ensi-uma.tn
-        </a>
-      </p>
+    <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+      
+      {/* SECTION PRIX DYNAMIQUE */}
+      <div className="text-center md:text-left min-w-[200px]">
+        <p className="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-black mb-2 italic">
+          Prix par membre
+        </p>
+        <div className="flex items-baseline gap-2 justify-center md:justify-start mb-2">
+          <span className="text-5xl font-black text-white tracking-tighter">
+            {formData.competition === "pitchhack" ? "20" : "30"}
+          </span>
+          <span className="text-xl font-black text-cyan-500">DT</span>
+          <span className="text-slate-500 text-sm font-bold">/ pers</span>
+        </div>
+        
+        {/* Ligne de calcul automatique */}
+        <div className="py-2 px-3 bg-white/5 rounded-lg border border-white/5 inline-block">
+          <p className="text-[11px] font-bold text-cyan-400 uppercase tracking-wider">
+            Total Équipe : {formData.competition === "pitchhack" ? 20 : 30} x {formData.memberCount} = 
+            <span className="text-white ml-1">
+              {(formData.competition === "pitchhack" ? 20 : 30) * formData.memberCount} DT
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div className="hidden md:block w-px h-24 bg-white/10"></div>
+
+      {/* SECTION D17 */}
+      <div className="text-center md:text-left flex-1">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 mb-3">
+          <CreditCard size={12} className="text-cyan-400" />
+          <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-widest">D17 Transfert</span>
+        </div>
+        {/* Numéro avec protection anti-coupure mobile */}
+        <p className="text-[24px] sm:text-3xl md:text-4xl font-mono font-black text-white tracking-normal md:tracking-[0.2em] mb-1 whitespace-nowrap">
+          26&nbsp;634&nbsp;066
+        </p>
+        <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest italic">
+          Effectuer un seul transfert pour toute l'équipe
+        </p>
+      </div>
     </div>
+
+    {/* BLOC D'INSTRUCTION AGRANDI (Corrigé avec email en minuscules) */}
+    <div className="mt-8 pt-6 border-t border-white/10">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 p-5 rounded-2xl bg-red-500/5 border border-red-500/20">
+        <AlertCircle size={28} className="text-red-500 shrink-0" />
+        <div className="text-center md:text-left">
+          <p className="text-xs font-black text-red-500 uppercase tracking-[0.2em] mb-1">
+            Action Requise (Validation)
+          </p>
+          <p className="text-sm md:text-base text-slate-200 font-medium">
+            Envoyez la capture D17 + CVs à :{' '}
+            <a 
+              href="mailto:ossec@ensi-uma.tn" 
+              className="text-cyan-400 font-bold hover:text-cyan-300 transition-colors underline decoration-cyan-500/30 underline-offset-4"
+            >
+              ossec@ensi-uma.tn
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    
   </div>
 </div>
-                </div>
-              </div>
 
               {/* SECTION : MEMBRES */}
               <div className="space-y-8">
@@ -244,7 +262,7 @@ export default function Register() {
 
                 {submitted && (
                   <div className="mt-6 p-4 rounded-xl bg-green-500/10 border border-green-500/50 text-green-400 text-center font-bold animate-bounce">
-                    🚀 Inscription enregistrée ! Redirection...
+                     Inscription enregistrée ! Redirection...
                   </div>
                 )}
               </div>
