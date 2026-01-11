@@ -119,42 +119,55 @@ function FaqSection() {
 
 function RoadmapSection() {
   return (
-    <section id="planning" className="py-24 bg-gradient-to-b from-slate-900 via-blue-900/10 to-slate-900 overflow-hidden relative">
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-cyan-500/5 blur-[120px] rounded-full"></div>
-      <div className="px-4 mb-12 text-center relative z-10">
-        <h2 className="text-5xl font-black text-white tracking-tighter uppercase italic">
-          Tunihack 11.0 <span className="text-cyan-400">Timeline</span>
-        </h2>
-        <div className="w-24 h-1 bg-cyan-500 mx-auto mt-4 shadow-[0_0_15px_rgba(34,211,238,0.5)]"></div>
+   <section id="planning" className="py-24 bg-gradient-to-b from-slate-900 via-blue-900/10 to-slate-900 overflow-hidden relative">
+  <div className="absolute top-1/4 -left-20 w-96 h-96 bg-cyan-500/5 blur-[120px] rounded-full"></div>
+  
+  <div className="px-4 mb-8 text-center relative z-10">
+    <h2 className="text-5xl font-black text-white tracking-tighter uppercase italic">
+      Tunihack 11.0 <span className="text-cyan-400">Timeline</span>
+    </h2>
+    <div className="w-24 h-1 bg-cyan-500 mx-auto mt-4 shadow-[0_0_15px_rgba(34,211,238,0.5)]"></div>
+    
+    {/* AJOUT : Phrase d'instruction avec animation */}
+    <div className="mt-6 flex items-center justify-center gap-2 text-slate-500 animate-pulse">
+      <span className="text-[10px] uppercase tracking-[0.3em] font-bold">
+        Glissez pour explorer le programme
+      </span>
+      <div className="flex gap-1">
+        <span className="animate-bounce-x">→</span>
       </div>
-      <div className="relative flex overflow-x-auto pb-20 pt-10 no-scrollbar cursor-grab active:cursor-grabbing">
-        <div className="flex items-start px-10 min-w-max">
-          <div className="absolute top-[115px] left-0 h-[2px] w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-30"></div>
-          {schedule.map((item, index) => (
-            <div key={index} className="relative flex flex-col items-center w-64 group">
-              <div className="mb-6 px-3 py-1 rounded-full border border-cyan-500 text-cyan-400 text-[10px] font-bold uppercase tracking-widest">
-                {item.day}
-              </div>
-              <div className="relative z-10">
-                <div className={`w-16 h-16 rounded-2xl bg-slate-900 border-2 flex items-center justify-center transition-all duration-300 group-hover:scale-125 group-hover:rotate-6 ${item.color} shadow-xl`}>
-                  <div className="text-white group-hover:text-cyan-400 transition-colors">
-                    {React.cloneElement(item.icon, { size: 28 })}
-                  </div>
-                </div>
-                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2">
-                   <span className="font-mono font-bold text-cyan-400 text-sm">{item.time}</span>
-                </div>
-              </div>
-              <div className="mt-16 text-center px-4">
-                <h3 className="text-white font-bold text-lg uppercase tracking-tight group-hover:text-cyan-400 transition-colors">
-                  {item.event}
-                </h3>
+    </div>
+  </div>
+
+  <div className="relative flex overflow-x-auto pb-20 pt-10 no-scrollbar cursor-grab active:cursor-grabbing">
+    <div className="flex items-start px-10 min-w-max">
+      <div className="absolute top-[115px] left-0 h-[2px] w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-30"></div>
+      
+      {schedule.map((item, index) => (
+        <div key={index} className="relative flex flex-col items-center w-64 group">
+          <div className="mb-6 px-3 py-1 rounded-full border border-cyan-500 text-cyan-400 text-[10px] font-bold uppercase tracking-widest">
+            {item.day}
+          </div>
+          <div className="relative z-10">
+            <div className={`w-16 h-16 rounded-2xl bg-slate-900 border-2 flex items-center justify-center transition-all duration-300 group-hover:scale-125 group-hover:rotate-6 ${item.color} shadow-xl`}>
+              <div className="text-white group-hover:text-cyan-400 transition-colors">
+                {React.cloneElement(item.icon, { size: 28 })}
               </div>
             </div>
-          ))}
+            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2">
+               <span className="font-mono font-bold text-cyan-400 text-sm">{item.time}</span>
+            </div>
+          </div>
+          <div className="mt-16 text-center px-4">
+            <h3 className="text-white font-bold text-lg uppercase tracking-tight group-hover:text-cyan-400 transition-colors">
+              {item.event}
+            </h3>
+          </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
+  </div>
+</section>
   );
 }
 export default function Home() {
