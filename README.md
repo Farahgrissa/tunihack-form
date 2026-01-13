@@ -54,16 +54,16 @@ The main objectives of this project are:
 - **Google Apps Script** (Form submission backend)
 
 ---
-
 ## 5. Project Structure
 
 src/
-├── assets/              # Images and static resources
-├── pages/
-│   ├── Home.jsx         # Main landing page
-│   └── Register.jsx     # Registration form
-├── App.jsx              # Root component
-├── main.jsx             # Application entry point
-├── App.css              # Global component styles
-└── index.css            # Global styles
+├── assets/           # Images, logos, gallery photos, and other static resources
+├── pages/            # Application pages
+│   ├── Home.jsx      # Main landing page (homepage)
+│   └── Register.jsx  # Registration form for participants
+├── App.jsx           # Root component managing routes and layout
+├── main.jsx          # Entry point of the application
+├── App.css           # Global styles for components
+└── index.css         # Base/global styles (fonts, colors, body, etc.)
+
 
