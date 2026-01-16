@@ -1,16 +1,69 @@
-# React + Vite
+# TuniHack 11 – Event Management Web Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. Introduction
 
-Currently, two official plugins are available:
+This project consists of the design and development of a **web platform for the management and promotion of the TuniHack 11 event**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The platform provides an interactive interface allowing users to:
+- Discover the event and its activities
+- Consult the detailed schedule
+- View previous editions
+- Register online for competitions (PitchHack / TuniHack)
 
-## React Compiler
+This project was developed in a **frontend-oriented architecture**, with an external backend service for form handling.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 2. Objectives
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The main objectives of this project are:
+
+- Design a **modern, responsive, and user-friendly interface**
+- Implement a **dynamic event presentation** (timeline, countdown, galleries)
+- Provide an **online registration system** with team management
+- Apply good practices in **React development**
+- Respect software engineering principles (modularity, readability, maintainability)
+
+---
+
+## 3. Functionalities
+
+### 3.1 Public Interface
+- Home page with club presentation
+- Animated countdown to the event
+- Event timeline (Day 1 / Day 2)
+- Gallery of previous events
+- FAQ section
+- Social media links
+
+### 3.2 Registration System
+- Choice of competition (PitchHack or TuniHack)
+- Dynamic team size constraints
+- Automatic price calculation
+- Registration form with team members’ information
+- Submission via Google Apps Script
+
+---
+
+## 4. Technologies Used
+
+- **React** (Functional Components & Hooks)
+- **React Router DOM** (Client-side routing)
+- **Tailwind CSS** (Utility-first styling)
+- **Lucide React** (Icons)
+- **Google Apps Script** (Form submission backend)
+
+---
+## 5. Project Structure
+
+src/
+├── assets/           # Images, logos, gallery photos, and other static resources
+├── pages/            # Application pages
+│   ├── Home.jsx      # Main landing page (homepage)
+│   └── Register.jsx  # Registration form for participants
+├── App.jsx           # Root component managing routes and layout
+├── main.jsx          # Entry point of the application
+├── App.css           # Global styles for components
+└── index.css         # Base/global styles (fonts, colors, body, etc.)
+
+
