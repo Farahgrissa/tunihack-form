@@ -53,8 +53,12 @@ const SOCIALS = {
 };
 const FAQ_DATA = [
 {
+    question: "Quelle est la différence entre le TuniHack et le PitchHack ?",
+    answer: "TuniHack : Vous devez développer une application ou un site réel et fonctionnel à la fin de l'événement.PitchHack : L'accent est mis sur la présentation d'un prototype (qui n'est pas forcément un produit fonctionnel) devant un jury."}
+  ,
+  {
     question: "Quels sont les frais d'inscription ?",
-    answer: "L'inscription est fixée à ( 30 DT * nbre de membres ) pour le TuniHack et ( 20 DT * nbre de membres ) pour le PitchHack."
+    answer: "L'inscription est fixée à ( 30 DT * nbre de membres ) pour le TuniHack et ( 20 DT * nbre de membres ) pour le PitchHack . Le paiement s'effectue après la validation par un seul membre de l'équipe ."
   },
   {
     question: "Si je ne participe pas à la compétition, puis-je quand même rejoindre ?",

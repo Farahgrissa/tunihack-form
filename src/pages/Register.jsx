@@ -166,19 +166,7 @@ export default function Register() {
       <div className="hidden md:block w-px h-24 bg-white/10"></div>
 
       {/* SECTION D17 */}
-      <div className="text-center md:text-left flex-1">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 mb-3">
-          <CreditCard size={12} className="text-cyan-400" />
-          <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-widest">D17 Transfert</span>
-        </div>
-        {/* Numéro avec protection anti-coupure mobile */}
-        <p className="text-[24px] sm:text-3xl md:text-4xl font-mono font-black text-white tracking-normal md:tracking-[0.2em] mb-1 whitespace-nowrap">
-          26&nbsp;634&nbsp;066
-        </p>
-        <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest italic">
-          Effectuer un seul transfert pour toute l'équipe
-        </p>
-      </div>
+
     </div>
 
     {/* BLOC D'INSTRUCTION AGRANDI (Corrigé avec email en minuscules) */}
@@ -190,7 +178,7 @@ export default function Register() {
             Action Requise (Validation)
           </p>
           <p className="text-sm md:text-base text-slate-200 font-medium">
-            Envoyez la capture D17 + CVs à :{' '}
+            Envoyez vos CVs à :{' '}
             <a 
               href="mailto:ossec@ensi-uma.tn" 
               className="text-cyan-400 font-bold hover:text-cyan-300 transition-colors underline decoration-cyan-500/30 underline-offset-4"
