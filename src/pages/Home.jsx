@@ -27,13 +27,14 @@ const schedule = [
   { day: "Day 1", time: "10:00", event: "Workshop", icon: <Cpu />, color: "border-cyan-500" },
   { day: "Day 1", time: "12:00", event: "Lunch Break", icon: <Coffee />, color: "border-cyan-500" },
   { day: "Day 1", time: "13:00", event: "Workshop", icon: <Cpu />, color: "border-cyan-500" },
+   { day: "Day 1", time: "14:00", event: "CP-Contest", icon: <Code />, color: "border-cyan-500" },
   { day: "Day 1", time: "14:30", event: "Music", icon: <Music />, color: "border-cyan-500" },
    { day: "Day 1", time: "15:30", event: "Workshop", icon: <Cpu />, color: "border-cyan-500" },
   { day: "Day 1", time: "17:00", event: "Coffee Break", icon: <Coffee />, color: "border-cyan-500" },
    { day: "Day 1", time: "17:30", event: "Workshop", icon: <Cpu />, color: "border-cyan-500" },
    { day: "Day 1", time: "18:30", event: "Activities", icon: <Gamepad2 />, color: "border-cyan-500" },
   { day: "Day 1", time: "20:00", event: "Dinner", icon: <Utensils />, color: "border-cyan-500" },
-  { day: "Day 1", time: "21:00", event: "CP-Contest", icon: <Code />, color: "border-cyan-500" },
+ 
   { day: "Day 1", time: "22:00", event: "Chess Tournament", icon: <Trophy />, color: "border-amber-500" },
   { day: "Day 1", time: "23:30", event: "LOL Competition", icon: <Gamepad2 />, color: "border-cyan-500" },
   { day: "Day 1", time: "00:00", event: "Music & Chill", icon: <Moon />, color: "border-indigo-500" },
@@ -253,12 +254,14 @@ useEffect(() => {
       <a href="#products" className="hover:text-cyan-400 transition">Produits</a>
       
       {/* Bouton fixé en taille compacte */}
-      <Link 
-        to="/register" 
-        className="ml-4 px-5 py-2 rounded-full bg-cyan-600 hover:bg-cyan-500 text-white transition-all shadow-lg shadow-cyan-500/20 scale-90"
-      >
-       Participer
-      </Link>
+{/* Remplacement du bouton Participer dans le Header */}
+<button 
+  disabled
+  className="ml-4 px-5 py-2 rounded-full bg-slate-800 text-slate-500 cursor-not-allowed border border-white/10 scale-90 flex items-center gap-2"
+>
+  <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+  Inscriptions Closes
+</button>
     </nav>
   </div>
 </header>
@@ -368,13 +371,25 @@ useEffect(() => {
       </section>
       <FaqSection />
 
-      {/* CTA */}
-      <section className="py-20 text-center">
-        <Link to="/register" className="inline-block bg-white text-black font-black px-12 py-5 rounded-full text-xl hover:bg-cyan-400 transition-all shadow-[0_20px_40px_rgba(255,255,255,0.1)]">
-          REJOINDRE L'AVENTURE
-        </Link>
-      </section>
-
+{/* CTA - VERSION FERMÉE */}
+<section className="py-20 text-center">
+  <div className="inline-block relative">
+    {/* Effet de lueur rouge pour le statut fermé */}
+    <div className="absolute -inset-4 bg-red-500/10 blur-3xl rounded-full"></div>
+    
+    <div className="relative bg-slate-900/50 border border-white/10 px-12 py-8 rounded-[32px] backdrop-blur-xl">
+      <h3 className="text-2xl font-black text-white mb-2 uppercase italic">
+        Les inscriptions sont <span className="text-red-500">closes</span>
+      </h3>
+      <p className="text-slate-400 text-sm max-w-xs mx-auto">
+        Toutes les places pour le TuniHack 11.0 ont été réservées. On se voit à l'événement !
+      </p>
+      <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-[10px] font-black uppercase tracking-widest">
+        Full Capacity
+      </div>
+    </div>
+  </div>
+</section>
       {/* FOOTER - Crédits Agrandis */}
       <footer id="contact" className="border-t border-white/5 bg-slate-950 pt-20 pb-10">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
