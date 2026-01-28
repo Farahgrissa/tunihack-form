@@ -254,14 +254,25 @@ useEffect(() => {
       <a href="#products" className="hover:text-cyan-400 transition">Produits</a>
       
       {/* Bouton fixé en taille compacte */}
-{/* Remplacement du bouton Participer dans le Header */}
-<button 
-  disabled
-  className="ml-4 px-5 py-2 rounded-full bg-slate-800 text-slate-500 cursor-not-allowed border border-white/10 scale-90 flex items-center gap-2"
->
-  <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-  Inscriptions Closes
-</button>
+{/* BOUTON D'INSCRIPTION (DÉSACTIVÉ/COMMENTÉ) 
+      <Link 
+        to="/register" 
+        className="ml-4 px-6 py-2 rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold transition-all scale-90 flex items-center gap-2 shadow-[0_0_15px_rgba(34,211,238,0.4)]"
+      >
+        <span className="w-2 h-2 bg-white rounded-full animate-ping"></span>
+        Participer
+      </Link>
+      */}
+
+      {/* BOUTON ACTIF - INSCRIPTIONS CLOSES */}
+      <button 
+        disabled
+        className="ml-4 px-5 py-2 rounded-full bg-slate-800 text-slate-500 cursor-not-allowed border border-white/10 scale-90 flex items-center gap-2"
+      >
+        <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+        Inscriptions Closes
+      </button>
+      
     </nav>
   </div>
 </header>
@@ -370,13 +381,33 @@ useEffect(() => {
         </div>
       </section>
       <FaqSection />
+{/* CTA - VERSION OUVERTE (DÉSACTIVÉE / COMMENTÉE) */}
+{/* <section className="py-20 text-center">
+  <div className="inline-block relative group">
+    <div className="absolute -inset-4 bg-cyan-500/20 blur-3xl rounded-full group-hover:bg-cyan-500/40 transition-all"></div>
+    <div className="relative bg-slate-900/50 border border-white/10 px-12 py-10 rounded-[32px] backdrop-blur-xl">
+      <h3 className="text-3xl font-black text-white mb-4 uppercase italic">
+        Rejoignez l'aventure <span className="text-cyan-500">TuniHack</span>
+      </h3>
+      <p className="text-slate-400 text-sm max-w-xs mx-auto mb-8">
+        Prêt à coder pendant 24h ou à pitcher votre idée révolutionnaire ? Les places sont limitées !
+      </p>
+      <Link 
+        to="/register"
+        className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-white text-slate-950 font-black uppercase tracking-widest hover:bg-cyan-400 transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(34,211,238,0.3)]"
+      >
+        Participer Maintenant
+        <Rocket size={18} />
+      </Link>
+    </div>
+  </div>
+</section>
+*/}
 
-{/* CTA - VERSION FERMÉE */}
+{/* CTA - VERSION FERMÉE (ACTIVE) */}
 <section className="py-20 text-center">
   <div className="inline-block relative">
-    {/* Effet de lueur rouge pour le statut fermé */}
     <div className="absolute -inset-4 bg-red-500/10 blur-3xl rounded-full"></div>
-    
     <div className="relative bg-slate-900/50 border border-white/10 px-12 py-8 rounded-[32px] backdrop-blur-xl">
       <h3 className="text-2xl font-black text-white mb-2 uppercase italic">
         Les inscriptions sont <span className="text-red-500">closes</span>

@@ -42,8 +42,8 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxT3TCz_MgCBoMVzRSW1THaKb1GsnlBlYkmvSEh_pP-q89Fdder7yylWOnCjlxU_sbv/exec";
-
+   
+    const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
     try {
       await fetch(SCRIPT_URL, {
         method: "POST",
