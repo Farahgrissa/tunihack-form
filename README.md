@@ -55,7 +55,7 @@ The main objectives of this project are:
 
 ---
 ## 5. Project Structure
-
+```text
 src/
 ├── assets/           # Images, logos, gallery photos, and other static resources
 ├── pages/            # Application pages
@@ -65,5 +65,6 @@ src/
 ├── main.jsx          # Entry point of the application
 ├── App.css           # Global styles for components
 └── index.css         # Base/global styles (fonts, colors, body, etc.)
+```
 
 
